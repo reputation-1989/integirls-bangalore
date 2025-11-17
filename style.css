@@ -1,0 +1,202 @@
+/* style.css — mobile-first, lightweight, accessible */
+
+/* Brand variables — adjust if you have official colors */
+:root{
+  --bg: #ffffff;
+  --text: #0f1724;
+  --muted: #5b6b7a;
+  --brand: #6c5ce7; /* violet-ish */
+  --accent: #18a999; /* teal accent */
+  --card: #fbfcff;
+  --shadow: rgba(18, 24, 38, 0.06);
+  --radius: 12px;
+  --max-width: 1100px;
+  --container-pad: 16px;
+  --focus: 3px solid rgba(108,92,231,0.18);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset & base */
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+  font-size:16px;
+}
+
+/* Layout helpers */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:18px var(--container-pad);
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #eef2f6;
+  z-index:100;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--text);
+}
+.brand img{
+  width:44px;
+  height:44px;
+  object-fit:contain;
+  border-radius:8px;
+  background:#fff;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+.brand-text{
+  font-weight:600;
+  font-size:18px;
+}
+
+/* Nav */
+.menu-toggle{
+  background:transparent;
+  border:0;
+  font-size:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+}
+.site-nav{
+  display:none;
+  gap:14px;
+}
+.site-nav a{
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+  padding:6px 8px;
+  border-radius:8px;
+}
+.site-nav a:hover, .site-nav a:focus{
+  color:var(--brand);
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+/* Hero */
+.hero{
+  padding:34px 0;
+  background: linear-gradient(180deg, rgba(108,92,231,0.06), rgba(24,169,153,0.02));
+}
+.hero-inner{
+  text-align:center;
+}
+h1{margin:0 0 8px 0; font-size:28px}
+.lead{color:var(--muted); margin:0 0 14px}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  cursor:pointer;
+  border:1px solid transparent;
+}
+.btn.primary{
+  background:var(--brand);
+  color:white;
+  border-color: transparent;
+}
+.btn.ghost{
+  background:transparent;
+  color:var(--brand);
+  border:1px solid rgba(108,92,231,0.14);
+}
+
+/* Sections */
+.section{padding:22px 0}
+.section h2{margin:0 0 12px; font-size:20px}
+.cards{display:grid; gap:12px}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:12px;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+.card h3{margin:0 0 6px}
+.meta{font-size:13px;color:var(--muted);margin:4px 0 8px}
+
+/* Team */
+.team-grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns: 1fr;
+}
+.member{
+  text-align:center;
+  padding:12px;
+}
+.member img{width:84px;height:84px;border-radius:12px;object-fit:cover;display:block;margin:0 auto 8px}
+
+/* Results list */
+.results-list{list-style:none;padding:0;margin:0}
+.results-list li{padding:8px 0;border-bottom:1px dashed #eef2f6;color:var(--muted)}
+
+/* Contact form */
+.contact-form{max-width:600px}
+.contact-form label{display:block;font-weight:600;margin-top:10px}
+.contact-form input, .contact-form textarea{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #e6eef3;
+  margin-top:6px;
+}
+.contact-form button{margin-top:12px}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid #eef2f6;
+  padding:14px 0;
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.98));
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.muted{color:var(--muted)}
+
+/* FAQ */
+details summary{cursor:pointer;padding:10px;border-radius:8px;background:#fff;border:1px solid #f1f6fa;margin-top:8px}
+
+/* Larger screens */
+@media(min-width:880px){
+  .site-nav{display:flex}
+  .menu-toggle{display:none}
+  h1{font-size:36px}
+  .cards{grid-template-columns: repeat(3, 1fr)}
+  .team-grid{grid-template-columns: repeat(3, 1fr)}
+}
+
+/* Utility */
+a.link{color:var(--brand); text-decoration:underline}
