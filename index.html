@@ -1,285 +1,297 @@
-/* General styles (assuming you have some existing styles) */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    color: #333;
-    /* NEW: Global Background Image - REPLACE URL BELOW */
-    background-image: url('https://placehold.co/1920x1080/eef2ff/2c3e50?text=Indian+Culture+Abstract'); /* Placeholder: Replace with your desired image URL (e.g., of Indian pattern/landmark) */
-    background-size: cover;
-    background-attachment: fixed; /* Parallax effect */
-    background-position: center;
-    background-color: #f0f0f0; /* Fallback color */
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INTEGIRLS Bangalore — Chapter</title>
+  <meta name="description" content="INTEGIRLS Bangalore — math, puzzles, and competitions for girls and non-binary students." />
+  
+  <!-- CSS link - MUST be present to load style.css -->
+  <link rel="stylesheet" href="style.css" /> 
+  
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
 
-/* Site Header - Keep it solid white for contrast */
-.site-header {
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <img src="logo.png" alt="INTEGIRLS Bangalore logo" id="logo" />
+        <span class="brand-text">INTEGIRLS Bangalore</span>
+      </a>
 
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation">☰</button>
 
-.brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#upcoming">Upcoming Events</a>
+        <a href="#competitions">Competitions</a>
+        <a href="#resources">Resources</a>
+        <a href="#results">Past Results</a>
+        <a href="#team">Our Team</a>
+        <a href="#sponsor">Sponsor Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
 
-#logo {
-    height: 40px; /* Adjust as needed */
-    margin-right: 10px;
-}
+  <main id="home">
 
-.menu-toggle {
-    display: none; /* Hidden on desktop */
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+    
 
-.site-nav a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-}
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>INTEGIRLS Bangalore</h1>
+        <p class="lead">Empowering girls and non-binary students in maths, puzzles, and STEM competitions across India.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#competitions">See Competitions</a>
+          <a class="btn ghost" href="#contact">Get Involved</a>
+        </div>
+      </div>
+    </section>
 
-/* Mobile navigation */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
+    
 
-    .site-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px; /* Adjust based on header height */
-        left: 0;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 10;
-    }
+    <section id="mission" class="section mission">
+      <div class="container">
+        <h2>Our Mission</h2>
+        <p>
+          We work to create a safe, empowering space for girls and non-binary students in India to explore mathematics confidently.
+          We recognize how gender bias and systemic barriers affect access to STEM for many students, especially non-binary youth.
+          Our goal is to support young learners early—helping them discover joy in problem solving, grow into competitive thinkers,
+          explore STEM pathways, and gain access to opportunities including olympiads, mentorship, and international programs.
+        </p>
+        <p class="text-center"></p>
+      </div>
+    </section>
 
-    .site-nav.active {
-        display: flex;
-    }
+    
 
-    .site-nav a {
-        margin: 0;
-        padding: 1rem;
-        border-bottom: 1px solid #eee;
-    }
-    .site-nav a:last-child {
-        border-bottom: none;
-    }
-}
+    <section id="upcoming" class="section upcoming">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <p>
+          INTEGIRLS Bangalore will host two free math competitions in the 2025–2026 school year: one in fall and one in spring.
+          There will be three divisions: 6–8, 9–10, and 11–12. Top participants will earn exciting awards and may be selected for
+          our Math Camp led by IMO/EGMO medalists and campers.
+          <br><br>
+          All girls, female-identifying, and non-binary teens across India may participate—no experience required!
+          Sign-ups for the fall competition will open soon.
+        </p>
+      </div>
+    </section>
 
+    
 
-/* HERO */
-.hero {
-    /* Changed to semi-transparent white */
-    background-color: rgba(255, 255, 255, 0.85); 
-    padding: 6rem 0;
-    text-align: center;
-    color: #2c3e50;
-}
+    <section id="competitions" class="section competitions">
+      <div class="container">
+        <h2>Competitions</h2>
 
-.hero-inner h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-}
+        <div class="cards">
+          <article class="card">
+            <h3>Fall Puzzle Hunt</h3>
+            <p class="meta">Date: October (TBD) • Format: Team & Individual</p>
+            <p>Short description of the fall event. Add registration link when ready.</p>
+            <p><strong>Who can join:</strong> School students up to grade 12.</p>
+          </article>
 
-.hero-inner .lead {
-    font-size: 1.25rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
+          <article class="card">
+            <h3>Spring Math Meet</h3>
+            <p class="meta">Date: March (TBD) • Format: Online / In-person</p>
+            <p>Short description of the spring math competition and sample problem types.</p>
+          </article>
 
-.hero-ctas .btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    margin: 0 0.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
+          <article class="card">
+            <h3>Workshops & Training</h3>
+            <p class="meta">Year-round</p>
+            <p>Problem solving sessions, mentoring, and mock tests for participants.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-.btn.primary {
-    background-color: #e91e63; /* Pink */
-    color: #fff;
-}
+    
 
-.btn.primary:hover {
-    background-color: #d81b60;
-}
+    <section id="resources" class="section resources">
+      <div class="container">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="#" class="link">Past problem sets (placeholder)</a></li>
+          <li><a href="#" class="link">Learning guides</a></li>
+          <li><a href="#" class="link">Recommended reading & practice sites</a></li>
+        </ul>
+        
+      </div>
+    </section>
 
-.btn.ghost {
-    background-color: transparent;
-    border: 2px solid #e91e63;
-    color: #e91e63;
-}
+    
 
-.btn.ghost:hover {
-    background-color: #e91e63;
-    color: #fff;
-}
+    <section id="results" class="section results">
+      <div class="container">
+        <h2>Past Results</h2>
+        <p>Showcase of past winners, team achievements, and notable results. Add entries below.</p>
 
-/* General Section Styling (Applied to Mission, Competitions, etc.) */
-.section {
-    padding: 4rem 0;
-    /* NEW: Semi-transparent white background to ensure text readability over body image */
-    background-color: rgba(255, 255, 255, 0.85); 
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional subtle lift */
-    margin-top: 2rem; 
-}
-.section:first-of-type {
-    margin-top: 0;
-}
+        <ul class="results-list">
+          <li><strong>2025 Fall Puzzle Hunt:</strong> Team X — 1st place (example)</li>
+          <li><strong>2024 Spring Math Meet:</strong> Individual Y — Gold</li>
+        </ul>
+      </div>
+    </section>
 
+    
 
-.mission p {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
+    <section id="team" class="section team">
+      <div class="container">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+          <div class="member">
+            <img src="avatar-placeholder.png" alt="Coordinator photo" />
+            <h4>Coordinator Name</h4>
+            <p class="role">Chapter Lead</p>
+          </div>
+          <div class="member">
+            <img src="avatar-placeholder.png" alt="Volunteer photo" />
+            <h4>Volunteer Name</h4>
+            <p class="role">Events & Outreach</p>
+          </div>
+          <div class="member">
+            <img src="avatar-placeholder.png" alt="Mentor photo" />
+            <h4>Mentor Name</h4>
+            <p class="role">Training Lead</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Upcoming Events */
-.upcoming p {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
+    
 
-/* Competitions Section */
-.competitions .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
+    <section id="sponsor" class="section sponsor">
+      <div class="container">
+        <h2>Sponsor Us</h2>
+        <p>We welcome sponsors and partners. Typical sponsorship items include venue support, prizes, travel support for participants, and general operating expenses. Please contact us if you are interested in supporting our mission!</p>
+      </div>
+    </section>
 
-.competitions .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    text-align: center;
-}
+    
 
-.competitions .card h3 {
-    font-size: 1.75rem;
-    color: #e91e63;
-    margin-bottom: 0.5rem;
-}
+<section id="faq" class="section py-16 sm:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-12">
+                Frequently Asked Questions (FAQs)
+            </h2>
 
-.competitions .card .meta {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 1rem;
-}
+            <div class="space-y-6">
+                
+                
 
-/* Resources Section */
-.resources ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-.resources li {
-    margin-bottom: 0.8rem;
-}
-.resources .link {
-    color: #e91e63;
-    text-decoration: none;
-    font-weight: 500;
-}
-.resources .link:hover {
-    text-decoration: underline;
-}
+<details class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-xl font-semibold text-pink-600 dark:text-pink-400">
+                        <span>I’m interested but have no math competition experience. Can I still attend?</span>
+                        <svg class="h-6 w-6 transform transition duration-300 group-open:rotate-180 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                        <p class="mt-4">
+                            Of course, you should really attend this competition! In the past, many people have stated that INTEGIRLS gave them an entry into math competitions and they had no idea how fun it was until they attended. If you would like any pointers on how to prepare, please feel free to email us at <a href="mailto:bangalore@integirls.org" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 font-medium">bangalore@integirls.org</a>. We hope to see you at our event(s)!
+                        </p>
+                    </div>
+                </details>
 
-/* Results Section */
-.results-list {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 2rem auto 0 auto;
-}
-.results-list li {
-    background-color: #eef2ff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-left: 4px solid #e91e63;
-    border-radius: 4px;
-}
+                
 
-/* Team Section */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-}
+<details class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-xl font-semibold text-pink-600 dark:text-pink-400">
+                        <span>I do not have an INTEGIRLS Chapter near my area, but I am interested in participating. Can I still attend?</span>
+                        <svg class="h-6 w-6 transform transition duration-300 group-open:rotate-180 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                        <p class="mt-4">
+                            We encourage students not only from the Bangalore area but also from other regions in India and globally to attend! You can reach out to us using the contact methods provided at the bottom of this page (<a href="#contact" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 font-medium">Contact Us</a>) if you have any questions about remote participation.
+                        </p>
+                    </div>
+                </details>
 
-.team-grid .member img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 3px solid #e91e63;
-}
+                
 
-.team-grid .member h4 {
-    font-size: 1.25rem;
-    color: #2c3e50;
-    margin-bottom: 0.25rem;
-}
+<details class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-xl font-semibold text-pink-600 dark:text-pink-400">
+                        <span>Who can I contact if I have any questions?</span>
+                        <svg class="h-6 w-6 transform transition duration-300 group-open:rotate-180 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                        <p class="mt-4">
+                            You can contact us through Email or Instagram via the links provided at the bottom of this page. Please note that it may take up to **two weeks** to get a reply from us through email. If your query is **urgent**, you can message us on Instagram or add "URGENT" to the subject line of your email for faster response.
+                        </p>
+                    </div>
+                </details>
+                
+                
 
-.team-grid .member .role {
-    color: #777;
-    font-style: italic;
-}
+<details class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-xl font-semibold text-pink-600 dark:text-pink-400">
+                        <span>I do not identify as female or non-binary, but I would like to participate. How can I do that?</span>
+                        <svg class="h-6 w-6 transform transition duration-300 group-open:rotate-180 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                        <p class="mt-4">
+                            Our competitions are specifically for girls and non-binary students. If you do not identify as female or non-binary, we encourage you to check out other opportunities we may share, particularly through our social media channels. You can also contact <a href="mailto:bangalore@integirls.org" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 font-medium">bangalore@integirls.org</a> to find more activities and resources that might be a good fit for you.
+                        </p>
+                    </div>
+                </details>
 
-/* Sponsor Section */
-.sponsor {
-    text-align: center;
-}
-.sponsor p {
-    max-width: 800px;
-    margin: 0 auto;
-}
+                
 
-/* FAQ Card styling adjustments to ensure readability */
-#faq .group {
-    background: rgba(255, 255, 255, 0.95); /* Nearly solid white cards for best contrast */
-}
-/* Re-apply Tailwind classes equivalent for dark mode */
-#faq .dark\:bg-gray-800 { 
-    background: rgba(31, 41, 55, 0.95);
-}
-#faq .text-gray-700 {
-    color: #374151; /* Darker text */
-}
-#faq .dark\:text-gray-300 {
-    color: #d1d5db; /* Lighter text for dark mode */
-}
+<details class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-xl font-semibold text-pink-600 dark:text-pink-400">
+                        <span>How can I contribute?</span>
+                        <svg class="h-6 w-6 transform transition duration-300 group-open:rotate-180 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                        <p class="mt-4">
+                            You can choose to **volunteer** for us by emailing us at <a href="mailto:bangalore@integirls.org" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 font-medium">bangalore@integirls.org</a>. You can also **donate** to our non-profit here (link coming soon!). Alternatively, email us at the same address to receive more information about how you can help. **YOUR HELP MAKES A DIFFERENCE TO US!**
+                        </p>
+                    </div>
+                </details>
+
+                
+
+<details class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-xl font-semibold text-pink-600 dark:text-pink-400">
+                        <span>How many competitions will you conduct throughout the year?</span>
+                        <svg class="h-6 w-6 transform transition duration-300 group-open:rotate-180 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
+                        <p class="mt-4">
+                            We are currently **targeting to host two competitions a year**: one in the fall and one in the spring. More details about the specific dates and formats for these competitions will be available on this website soon, particularly in the <a href="#upcoming" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 font-medium">Upcoming Events</a> section.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Simple script to toggle mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('site-nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
