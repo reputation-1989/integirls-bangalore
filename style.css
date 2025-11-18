@@ -1,87 +1,77 @@
 /* ============================================
-   INTEGIRLS Bangalore • Full Updated Stylesheet
-   Includes Indian Watercolor Gradient Background
+   INTEGIRLS Bangalore • CLEAN + STABLE STYLES
+   With Indian Watercolor Gradient Background
    ============================================ */
 
+/* Color variables */
 :root{
-  --bg: #ffffff;
-  --text: #0f1724;
-  --muted: #5b6b7a;
-  --brand: #6c5ce7;
-  --accent: #18a999;
-  --card: #fbfcff;
-  --shadow: rgba(18, 24, 38, 0.06);
-  --radius: 12px;
-  --max-width: 1100px;
-  --container-pad: 16px;
-  --focus: 3px solid rgba(108,92,231,0.18);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  --text:#0f1724;
+  --muted:#5b6b7a;
+  --brand:#6c5ce7;
+  --accent:#18a999;
+  --card:#ffffff;
+  --radius:12px;
+  --shadow:0 4px 12px rgba(0,0,0,0.06);
+  --max-width:1100px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
 }
 
 /* ============================================
-   Background — Soft Indian Gradient (Option 2)
-   Jaipur Pink ↔ Turquoise
+   GLOBAL + BACKGROUND
    ============================================ */
 
-body {
-  position: relative;
-  margin: 0;
-  color: var(--text);
-  background: linear-gradient(
-    120deg,
-    rgba(236,144,183,0.06) 0%,
-    rgba(24,169,153,0.04) 50%,
-    rgba(108,92,231,0.03) 100%
+body{
+  margin:0;
+  padding:0;
+  background:linear-gradient(
+      120deg,
+      rgba(236,144,183,0.12) 0%,
+      rgba(24,169,153,0.10) 50%,
+      rgba(108,92,231,0.08) 100%
   );
-  background-attachment: fixed;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-  font-size: 16px;
+  background-attachment:fixed;
+  color:var(--text);
+  line-height:1.6;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: rgba(255,255,255,0.92);
-  z-index: 0;
+/* Light overlay to soften gradient */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:rgba(255,255,255,0.82);
+  z-index:0;
 }
 
-* {
-  position: relative;
-  z-index: 1;
+*{
+  position:relative;
+  z-index:1;
 }
-
-/* ============================================
-   Layout
-   ============================================ */
 
 .container{
-  width:100%;
   max-width:var(--max-width);
   margin:0 auto;
-  padding:18px var(--container-pad);
+  padding:18px;
 }
 
 /* ============================================
-   Header / Navbar
+   HEADER + NAV
    ============================================ */
 
 .site-header{
   position:sticky;
   top:0;
-  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid #eef2f6;
+  background:rgba(255,255,255,0.90);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #dfe6ee;
   z-index:100;
 }
 
 .header-inner{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:12px;
+  align-items:center;
 }
 
 .brand{
@@ -97,8 +87,8 @@ body::before {
   height:44px;
   border-radius:8px;
   background:#fff;
-  box-shadow: 0 2px 6px var(--shadow);
-  object-fit:contain;
+  padding:4px;
+  box-shadow:var(--shadow);
 }
 
 .brand-text{
@@ -108,14 +98,15 @@ body::before {
 
 .site-nav{
   display:none;
-  gap:14px;
+  flex-direction:column;
+  padding-top:10px;
 }
 
 .site-nav a{
   text-decoration:none;
+  padding:10px;
   color:var(--muted);
   font-weight:600;
-  padding:6px 8px;
   border-radius:8px;
 }
 
@@ -126,52 +117,58 @@ body::before {
 .menu-toggle{
   background:none;
   border:0;
-  font-size:20px;
+  font-size:22px;
   padding:8px;
+  cursor:pointer;
 }
 
-.site-nav.active {
-  display:block;
-  background:#ffffffee;
-  margin-top:10px;
-  padding:10px;
+.site-nav.active{
+  display:flex;
+  background:#ffffffdd;
   border-radius:10px;
 }
 
+/* Desktop */
+@media(min-width:880px){
+  .site-nav{
+    display:flex!important;
+    flex-direction:row;
+    gap:14px;
+    padding:0;
+  }
+  .menu-toggle{ display:none; }
+}
+
 /* ============================================
-   Hero
+   HERO
    ============================================ */
 
 .hero{
-  padding:34px 0;
-  background: linear-gradient(180deg, rgba(108,92,231,0.06), rgba(24,169,153,0.02));
-}
-
-.hero-inner{
+  padding:50px 0;
   text-align:center;
 }
 
 h1{
-  margin:0 0 8px 0;
-  font-size:28px;
+  margin:0;
+  font-size:34px;
 }
 
 .lead{
   color:var(--muted);
-  margin:0 0 14px;
+  margin-top:10px;
 }
 
 /* ============================================
-   Buttons
+   BUTTONS
    ============================================ */
 
 .btn{
   display:inline-block;
-  padding:10px 14px;
+  padding:10px 16px;
   border-radius:10px;
-  font-weight:600;
   text-decoration:none;
-  border:1px solid transparent;
+  font-weight:600;
+  margin:6px;
 }
 
 .btn.primary{
@@ -180,69 +177,89 @@ h1{
 }
 
 .btn.ghost{
-  background:transparent;
+  border:2px solid var(--brand);
   color:var(--brand);
-  border:1px solid rgba(108,92,231,0.18);
+  background:transparent;
 }
 
 /* ============================================
-   Generic Sections
+   SECTIONS
    ============================================ */
 
 .section{
-  padding:22px 0;
+  padding:40px 0;
 }
 
 .section h2{
-  margin:0 0 12px;
-  font-size:20px;
+  margin-bottom:16px;
+  font-size:26px;
 }
 
 /* ============================================
-   Cards
+   COMPETITION CARDS
    ============================================ */
 
 .cards{
   display:grid;
-  gap:12px;
+  gap:16px;
 }
 
 .card{
-  background:var(--card);
+  background:#fff;
   border-radius:var(--radius);
-  padding:12px;
-  box-shadow: 0 4px 18px var(--shadow);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+
+.card h3{
+  margin:0 0 8px;
 }
 
 .meta{
-  font-size:13px;
   color:var(--muted);
+  font-size:14px;
+}
+
+/* Desktop card grid */
+@media(min-width:880px){
+  .cards{
+    grid-template-columns:repeat(3,1fr);
+  }
 }
 
 /* ============================================
-   Team
+   TEAM
    ============================================ */
 
 .team-grid{
   display:grid;
-  gap:12px;
-  grid-template-columns:1fr;
+  gap:18px;
 }
 
 .member{
   text-align:center;
+  background:#fff;
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
 }
 
 .member img{
-  width:84px;
-  height:84px;
+  width:90px;
+  height:90px;
   border-radius:12px;
   object-fit:cover;
-  margin-bottom:8px;
+  margin-bottom:10px;
+}
+
+@media(min-width:880px){
+  .team-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
 }
 
 /* ============================================
-   Results
+   RESULTS
    ============================================ */
 
 .results-list{
@@ -252,12 +269,12 @@ h1{
 
 .results-list li{
   padding:8px 0;
-  border-bottom:1px dashed #eef2f6;
+  border-bottom:1px solid #e7edf3;
   color:var(--muted);
 }
 
 /* ============================================
-   Contact Form
+   CONTACT FORM
    ============================================ */
 
 .contact-form{
@@ -265,22 +282,22 @@ h1{
 }
 
 .contact-form label{
-  display:block;
   font-weight:600;
-  margin-top:10px;
+  display:block;
+  margin-top:12px;
 }
 
 .contact-form input,
 .contact-form textarea{
   width:100%;
   padding:10px;
-  border-radius:8px;
-  border:1px solid #e6eef3;
+  border-radius:10px;
+  border:1px solid #d8e1e9;
   margin-top:6px;
 }
 
 .contact-form button{
-  margin-top:12px;
+  margin-top:14px;
 }
 
 /* ============================================
@@ -289,51 +306,28 @@ h1{
 
 details summary{
   cursor:pointer;
-  padding:10px;
-  border-radius:8px;
+  padding:12px;
   background:#fff;
-  border:1px solid #f1f6fa;
-  margin-top:8px;
+  border-radius:10px;
+  border:1px solid #e8eef4;
+  font-weight:600;
+}
+
+details p{
+  margin:12px 0 4px;
 }
 
 /* ============================================
-   Footer
+   FOOTER
    ============================================ */
 
 .site-footer{
-  border-top:1px solid #eef2f6;
-  padding:14px 0;
-  background:rgba(255,255,255,0.96);
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
+  background:#ffffff;
+  padding:20px 0;
+  border-top:1px solid #dfe6ee;
+  text-align:center;
 }
 
 .muted{
   color:var(--muted);
-}
-
-/* ============================================
-   Links
-   ============================================ */
-
-a.link{
-  color:var(--brand);
-  text-decoration:underline;
-}
-
-/* ============================================
-   Large Screens
-   ============================================ */
-
-@media(min-width:880px){
-  .site-nav{ display:flex; }
-  .menu-toggle{ display:none; }
-  h1{ font-size:36px; }
-  .cards{ grid-template-columns:repeat(3, 1fr); }
-  .team-grid{ grid-template-columns:repeat(3, 1fr); }
 }
