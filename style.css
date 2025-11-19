@@ -1,103 +1,306 @@
-/* CLEAN + STABLE STYLES with soft Indian watercolor gradient */
-
-/* Variables */
-:root{
-  --text:#0f1724;
-  --muted:#5b6b7a;
-  --brand:#6c5ce7;
-  --card:#ffffff;
-  --radius:12px;
-  --shadow: 0 6px 18px rgba(2,6,23,0.06);
-  --max-width:1100px;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+/* General styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    /* Global Background Image - Set to IISc architecture */
+    background-image: url('https://source.unsplash.com/random/1920x1080/?IISc,Bangalore,architecture');
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center;
+    background-color: #f0f0f0; /* Fallback color */
+    /* NOTE: If the image does not appear, the random Unsplash URL might be blocked. 
+             If so, replace the URL with a direct image link or use a solid background color. */
 }
 
-/* Background */
-body{
-  margin:0;
-  padding:0;
-  color:var(--text);
-  background: linear-gradient(
-    120deg,
-    rgba(236,144,183,0.10) 0%,
-    rgba(24,169,153,0.08) 50%,
-    rgba(108,92,231,0.06) 100%
-  );
-  background-attachment: fixed;
-  line-height:1.6;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-/* overlay to soften */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:rgba(255,255,255,0.86);
-  z-index:0;
+/* Site Header - Keep it solid for best contrast with the navigation */
+.site-header {
+    background-color: #fff; 
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky; /* Keep header visible */
+    top: 0;
+    z-index: 20;
 }
 
-/* ensure content above bg */
-*{ position:relative; z-index:1; box-sizing:border-box; }
-
-/* container */
-.container{ max-width:var(--max-width); margin:0 auto; padding:18px; }
-
-/* header */
-.site-header{
-  position:sticky; top:0; z-index:100;
-  background: rgba(255,255,255,0.92);
-  border-bottom:1px solid #e6eef3;
-  backdrop-filter: blur(6px);
-}
-.header-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
-
-/* brand */
-.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); }
-.brand img{ width:44px; height:44px; border-radius:8px; background:#fff; padding:4px; box-shadow:var(--shadow); object-fit:contain; }
-.brand-text{ font-weight:600; font-size:18px; }
-
-/* nav */
-.site-nav{ display:none; gap:12px; }
-.site-nav a{ text-decoration:none; color:var(--muted); font-weight:600; padding:6px 8px; border-radius:8px; }
-.site-nav a:hover{ color:var(--brand); }
-.menu-toggle{ background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
-.site-nav.active{ display:flex; flex-direction:column; background:#ffffffdd; padding:8px; border-radius:8px; }
-
-/* hero */
-.hero{ padding:44px 0; text-align:center; background: linear-gradient(180deg, rgba(108,92,231,0.03), rgba(24,169,153,0.01)); }
-h1{ margin:0; font-size:32px; }
-.lead{ color:var(--muted); margin-top:8px; }
-
-/* buttons */
-.btn{ display:inline-block; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; margin:6px; }
-.btn.primary{ background:var(--brand); color:#fff; }
-.btn.ghost{ background:transparent; color:var(--brand); border:1px solid rgba(108,92,231,0.12); }
-
-/* sections */
-.section{ padding:36px 0; }
-.section h2{ margin-bottom:12px; font-size:22px; }
-
-/* cards */
-.cards{ display:grid; gap:14px; }
-.card{ background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
-
-/* team */
-.team-grid{ display:grid; gap:14px; }
-.member{ text-align:center; background:#fff; padding:16px; border-radius:12px; box-shadow:var(--shadow); }
-.member img{ width:88px; height:88px; border-radius:12px; object-fit:cover; margin-bottom:8px; }
-
-/* responsive grid */
-@media(min-width:880px){
-  .site-nav{ display:flex; }
-  .menu-toggle{ display:none; }
-  .cards{ grid-template-columns: repeat(3, 1fr); }
-  .team-grid{ grid-template-columns: repeat(3, 1fr); }
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* contact, faq, footer minor tweaks */
-.contact-form{ max-width:600px; }
-.contact-form input, .contact-form textarea{ width:100%; padding:10px; border-radius:8px; border:1px solid #e2ecf2; margin-top:8px; }
-details summary{ cursor:pointer; padding:12px; background:#fff; border-radius:10px; border:1px solid #eef6fb; font-weight:600; margin-top:8px; }
-.site-footer{ background:#fff; padding:18px 0; border-top:1px solid #e6eef3; text-align:center; }
-.muted{ color:#6b7280; }
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#logo {
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.site-nav {
+    display: flex;
+}
+
+.site-nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 62px; /* Adjust based on header height */
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 10;
+    }
+
+    .site-nav.active {
+        display: flex;
+    }
+
+    .site-nav a {
+        margin: 0;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    .site-nav a:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* HERO */
+.hero {
+    /* MODIFIED: Lowered opacity from 0.95 to 0.8 for better background visibility */
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 6rem 0;
+    text-align: center;
+    color: #2c3e50;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.hero-inner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #e91e63; /* Use pink for main title */
+}
+
+.hero-inner .lead {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.hero-ctas .btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+    background-color: #e91e63; /* Pink */
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background-color: #d81b60;
+}
+
+.btn.ghost {
+    background-color: transparent;
+    border: 2px solid #e91e63;
+    color: #e91e63;
+}
+
+.btn.ghost:hover {
+    background-color: #e91e63;
+    color: #fff;
+}
+
+/* General Section Styling (Applied to Mission, Competitions, etc.) */
+.section {
+    padding: 4rem 0;
+    /* MODIFIED: Lowered opacity from 0.95 to 0.8 for better background visibility */
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    margin-top: 2rem; 
+}
+
+/* Remove margin from the very first content section right after the hero */
+.mission {
+    margin-top: 0;
+}
+
+
+.section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.mission p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Upcoming Events */
+.upcoming p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Competitions Section */
+.competitions .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.competitions .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.competitions .card h3 {
+    font-size: 1.75rem;
+    color: #e91e63;
+    margin-bottom: 0.5rem;
+}
+
+.competitions .card .meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+/* Resources Section */
+.resources ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.resources li {
+    margin-bottom: 0.8rem;
+}
+.resources .link {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: 500;
+}
+.resources .link:hover {
+    text-decoration: underline;
+}
+
+/* Results Section */
+.results-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+}
+.results-list li {
+    background-color: #eef2ff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #e91e63;
+    border-radius: 4px;
+}
+
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.team-grid .member img {
+    width: 120px;
+    height: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #e91e63;
+}
+
+.team-grid .member h4 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.team-grid .member .role {
+    color: #777;
+    font-style: italic;
+}
+
+/* Sponsor Section */
+.sponsor {
+    text-align: center;
+}
+.sponsor p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* FAQ Card styling adjustments to ensure readability */
+#faq .group {
+    /* MODIFIED: Lowered opacity from 0.98 to 0.85 for better background visibility */
+    background: rgba(255, 255, 255, 0.85);
+}
+/* Re-apply Tailwind classes equivalent for dark mode */
+#faq .dark\:bg-gray-800 { 
+    background: rgba(31, 41, 55, 0.85); /* Slightly darker, also adjusted opacity */
+}
+#faq .text-gray-700 {
+    color: #374151; /* Darker text */
+}
+#faq .dark\:text-gray-300 {
+    color: #d1d5db; /* Lighter text for dark mode */
+}
