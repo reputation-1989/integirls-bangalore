@@ -5,14 +5,129 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>INTEGIRLS Bangalore — Chapter</title>
   <meta name="description" content="INTEGIRLS Bangalore — math, puzzles, and competitions for girls and non-binary students." />
-  <!-- external stylesheet (must be at repo root: style.css) -->
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- ============================
+       INLINE CSS (guaranteed to load)
+       Includes Indian watercolor gradient + full layout
+       ============================ -->
+  <style>
+  /* CLEAN + STABLE STYLES with soft Indian watercolor gradient */
+  :root{
+    --text:#0f1724;
+    --muted:#5b6b7a;
+    --brand:#6c5ce7;
+    --card:#ffffff;
+    --radius:12px;
+    --shadow: 0 6px 18px rgba(2,6,23,0.06);
+    --max-width:1100px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+  }
+
+  /* Background */
+  html,body{height:100%}
+  body{
+    margin:0;
+    padding:0;
+    color:var(--text);
+    background: linear-gradient(
+      120deg,
+      rgba(236,144,183,0.10) 0%,
+      rgba(24,169,153,0.08) 50%,
+      rgba(108,92,231,0.06) 100%
+    );
+    background-attachment: fixed;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    font-size:16px;
+  }
+
+  /* overlay to soften */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:rgba(255,255,255,0.86);
+    z-index:0;
+  }
+
+  /* ensure content above bg */
+  *{ position:relative; z-index:1; box-sizing:border-box; }
+
+  /* container */
+  .container{ max-width:var(--max-width); margin:0 auto; padding:18px; }
+
+  /* header */
+  .site-header{
+    position:sticky; top:0; z-index:100;
+    background: rgba(255,255,255,0.92);
+    border-bottom:1px solid #e6eef3;
+    backdrop-filter: blur(6px);
+  }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+
+  /* brand */
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); }
+  .brand img{ width:44px; height:44px; border-radius:8px; background:#fff; padding:4px; box-shadow:var(--shadow); object-fit:contain; }
+  .brand-text{ font-weight:600; font-size:18px; }
+
+  /* nav */
+  .site-nav{ display:none; gap:12px; }
+  .site-nav a{ text-decoration:none; color:var(--muted); font-weight:600; padding:6px 8px; border-radius:8px; }
+  .site-nav a:hover{ color:var(--brand); }
+  .menu-toggle{ background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
+  .site-nav.active{ display:flex; flex-direction:column; background:#ffffffdd; padding:8px; border-radius:8px; }
+
+  /* hero */
+  .hero{ padding:44px 0; text-align:center; background: linear-gradient(180deg, rgba(108,92,231,0.03), rgba(24,169,153,0.01)); }
+  h1{ margin:0; font-size:32px; }
+  .lead{ color:var(--muted); margin-top:8px; }
+
+  /* buttons */
+  .btn{ display:inline-block; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; margin:6px; }
+  .btn.primary{ background:var(--brand); color:#fff; }
+  .btn.ghost{ background:transparent; color:var(--brand); border:1px solid rgba(108,92,231,0.12); }
+
+  /* sections */
+  .section{ padding:36px 0; }
+  .section h2{ margin-bottom:12px; font-size:22px; }
+
+  /* cards */
+  .cards{ display:grid; gap:14px; }
+  .card{ background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
+  .card h3{margin:0 0 8px}
+  .meta{ color:var(--muted); font-size:14px }
+
+  /* team */
+  .team-grid{ display:grid; gap:14px; }
+  .member{ text-align:center; background:#fff; padding:16px; border-radius:12px; box-shadow:var(--shadow); }
+  .member img{ width:88px; height:88px; border-radius:12px; object-fit:cover; margin-bottom:8px; }
+
+  /* responsive */
+  @media(min-width:880px){
+    .site-nav{ display:flex; }
+    .menu-toggle{ display:none; }
+    .cards{ grid-template-columns: repeat(3, 1fr); }
+    .team-grid{ grid-template-columns: repeat(3, 1fr); }
+    h1{ font-size:36px; }
+  }
+
+  /* forms/faq/footer */
+  .contact-form{ max-width:600px; }
+  .contact-form input, .contact-form textarea{ width:100%; padding:10px; border-radius:8px; border:1px solid #e2ecf2; margin-top:8px; }
+  details summary{ cursor:pointer; padding:12px; background:#fff; border-radius:10px; border:1px solid #eef6fb; font-weight:600; margin-top:8px; }
+  .site-footer{ background:#fff; padding:18px 0; border-top:1px solid #e6eef3; text-align:center; }
+  .muted{ color:#6b7280; }
+  </style>
+
+  <!-- end inline CSS -->
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home">
+        <!-- If you don't have a logo, this img can be removed; it's safe to keep as placeholder -->
         <img src="logo.png" alt="INTEGIRLS Bangalore logo" id="logo" />
         <span class="brand-text">INTEGIRLS Bangalore</span>
       </a>
@@ -219,7 +334,7 @@
         <details>
           <summary>How can I contribute?</summary>
           <p>
-            You may choose to <strong>volunteer</strong> for us by emailing us at <a href="mailto:bangalore@integirls.org">bangalore@integirls.org</a> or can <strong>donate</strong> to our non-profit here (link coming soon!). You can also email us at <a href="mailto:bangalore@integirls.org">bangalore@integirls.org</a> to receive more information about how you can help. <strong>YOUR HELP MAKES A DIFFERENCE TO US!</strong>
+            You may choose to <strong>volunteer</strong> for us by emailing us at <a href="mailto:bangalore@integirls.org">bangalore@integirls.org</a> or can <strong>donate</strong> to our non-profit here (link coming soon!). You can also email us at <a href="mailto:bangalore@integirls.org">bangalore@integirls.org</a> to receive more information about how you can help. <strong>YOUR HELP MAKES A DIFFERence TO US!</strong>
           </p>
         </details>
 
@@ -248,6 +363,26 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ============================
+       INLINE JS (guaranteed to run)
+       ============================ -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // menu toggle
+    var menuToggle = document.getElementById("menu-toggle");
+    var siteNav = document.getElementById("site-nav");
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener("click", function() {
+        siteNav.classList.toggle("active");
+      });
+    }
+
+    // set current year in footer
+    var y = new Date().getFullYear();
+    var el = document.getElementById("current-year");
+    if (el) el.textContent = y;
+  });
+  </script>
+
 </body>
 </html>
