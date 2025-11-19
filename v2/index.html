@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INTEGIRLS Bangalore — Chapter</title>
+  <meta name="description" content="INTEGIRLS Bangalore — math competitions, puzzles, and STEM opportunities for girls and non-binary students in India." />
+
+  <!-- ==========================
+       INLINE CSS (Guaranteed)
+       ========================== -->
+  <style>
+    :root {
+      --text:#0f1724;
+      --muted:#5b6b7a;
+      --brand:#6c5ce7;
+      --accent:#18a999;
+      --radius:12px;
+      --shadow:0 6px 18px rgba(2,6,23,0.06);
+      --max-width:1100px;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+    }
+
+    html,body{height:100%; margin:0; padding:0;}
+
+    /* Soft Indian watercolor background */
+    body{
+      background: linear-gradient(
+        120deg,
+        rgba(236,144,183,0.12) 0%,
+        rgba(24,169,153,0.10) 50%,
+        rgba(108,92,231,0.08) 100%
+      );
+      background-attachment:fixed;
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* white overlay */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:rgba(255,255,255,0.80);
+      z-index:0;
+    }
+
+    *{position:relative; z-index:1; box-sizing:border-box;}
+
+    .container{max-width:var(--max-width); margin:0 auto; padding:18px;}
+
+    /* HEADER */
+    .site-header{
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,0.92);
+      border-bottom:1px solid #e3e9ef;
+      backdrop-filter:blur(6px);
+      z-index:100;
+    }
+    .header-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .brand{
+      display:flex;
+      gap:10px;
+      text-decoration:none;
+      color:var(--text);
+      align-items:center;
+    }
+    .brand img{
+      width:44px;
+      height:44px;
+      border-radius:8px;
+      background:#fff;
+      padding:4px;
+      box-shadow:var(--shadow);
+      object-fit:contain;
+    }
+    .brand-text{
+      font-weight:600;
+      font-size:18px;
+    }
+
+    /* NAV */
+    .site-nav{display:none; flex-direction:column; gap:8px; margin-top:10px;}
+    .site-nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      padding:8px;
+      border-radius:8px;
+    }
+    .site-nav a:hover{color:var(--brand);}
+    .menu-toggle{border:0; background:none; font-size:22px; cursor:pointer;}
+
+    .site-nav.active{
+      display:flex;
+      background:#ffffffdd;
+      padding:10px;
+      border-radius:8px;
+    }
+
+    @media(min-width:880px){
+      .site-nav{display:flex!important; flex-direction:row; gap:14px; margin-top:0;}
+      .menu-toggle{display:none;}
+    }
+
+    /* HERO */
+    .hero{
+      padding:48px 0;
+      text-align:center;
+      background:linear-gradient(180deg, rgba(108,92,231,0.04), rgba(24,169,153,0.02));
+    }
+    h1{margin:0; font-size:34px;}
+    .lead{color:var(--muted); margin-top:10px;}
+
+    .btn{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      margin:6px;
+    }
+    .btn.primary{background:var(--brand); color:#fff;}
+    .btn.ghost{
+      border:1px solid rgba(108,92,231,0.20);
+      color:var(--brand);
+      background:transparent;
+    }
+
+    /* SECTIONS */
+    .section{padding:38px 0;}
+    .section h2{margin-bottom:14px;}
+
+    /* CARDS */
+    .cards{display:grid; gap:16px;}
+    .card{
+      background:#fff;
+      padding:16px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .meta{color:var(--muted); font-size:14px;}
+
+    @media(min-width:880px){
+      .cards{grid-template-columns:repeat(3,1fr);}
+    }
+
+    /* TEAM */
+    .team-grid{display:grid; gap:16px;}
+    .member{
+      background:#fff;
+      padding:18px;
+      border-radius:12px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+    .member img{
+      width:88px;
+      height:88px;
+      border-radius:12px;
+      object-fit:cover;
+      margin-bottom:8px;
+    }
+    @media(min-width:880px){
+      .team-grid{grid-template-columns:repeat(3,1fr);}
+    }
+
+    /* RESULTS */
+    .results-list{list-style:none; padding:0;}
+    .results-list li{
+      padding:8px 0;
+      border-bottom:1px solid #e6edf3;
+    }
+
+    /* FAQ */
+    details summary{
+      background:#fff;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid #e7edf5;
+      cursor:pointer;
+      font-weight:600;
+      margin-top:10px;
+    }
+
+    /* FOOTER */
+    .site-footer{
+      background:#fff;
+      padding:18px 0;
+      border-top:1px solid #e6edf5;
+      text-align:center;
+      margin-top:40px;
+    }
+    .muted{color:#6b7280;}
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <img src="logo.png" alt="INTEGIRLS Bangalore logo" />
+        <span class="brand-text">INTEGIRLS Bangalore</span>
+      </a>
+
+      <button id="menu-toggle" class="menu-toggle">☰</button>
+
+      <nav id="site-nav" class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#upcoming">Upcoming Events</a>
+        <a href="#competitions">Competitions</a>
+        <a href="#resources">Resources</a>
+        <a href="#results">Past Results</a>
+        <a href="#team">Our Team</a>
+        <a href="#sponsor">Sponsor Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <h1>INTEGIRLS Bangalore</h1>
+        <p class="lead">Empowering girls and non-binary students in mathematics, puzzles, and STEM across India.</p>
+        <a href="#competitions" class="btn primary">See Competitions</a>
+        <a href="#contact" class="btn ghost">Get Involved</a>
+      </div>
+    </section>
+
+    <!-- OUR MISSION -->
+    <section id="mission" class="section">
+      <div class="container">
+        <h2>Our Mission</h2>
+        <p>
+          We work to create a safe, empowering space for girls and non-binary students in India to explore mathematics confidently.
+          We recognize how gender bias and systemic barriers affect access to STEM for many students, especially non-binary youth.
+          Our goal is to support young learners early—helping them discover joy in problem solving, grow into competitive thinkers,
+          explore STEM pathways, and gain access to opportunities including olympiads, mentorship, and international programs.
+        </p>
+      </div>
+    </section>
+
+    <!-- UPCOMING -->
+    <section id="upcoming" class="section">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <p>
+          INTEGIRLS Bangalore will host two free math competitions in the 2025–2026 school year: one in fall and one in spring.
+          Divisions: 6–8, 9–10, and 11–12. Top participants may be selected for our Math Camp run by IMO/EGMO medalists.
+          No experience required — sign-ups will open soon!
+        </p>
+      </div>
+    </section>
+
+    <!-- COMPETITIONS -->
+    <section id="competitions" class="section">
+      <div class="container">
+        <h2>Competitions</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Fall Puzzle Hunt</h3>
+            <p class="meta">October (TBD) • Team & Individual</p>
+            <p>Fun and creative puzzle-solving competition.</p>
+          </article>
+
+          <article class="card">
+            <h3>Spring Math Meet</h3>
+            <p class="meta">March (TBD) • Online / In-person</p>
+            <p>Math challenge exam across multiple rounds.</p>
+          </article>
+
+          <article class="card">
+            <h3>Workshops & Training</h3>
+            <p class="meta">Year-round</p>
+            <p>Mock tests, mentoring, and problem-solving sessions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email us: <a href="mailto:bangalore@integirls.org">bangalore@integirls.org</a></p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2>FAQ</h2>
+
+        <details>
+          <summary>I have no math competition experience. Can I still attend?</summary>
+          <p>Absolutely — many participants begin their math journey with INTEGIRLS!</p>
+        </details>
+
+        <details>
+          <summary>No chapter near me. Can I still join?</summary>
+          <p>Yes — students from all over India can participate.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> INTEGIRLS Bangalore</p>
+  </footer>
+
+  <!-- INLINE JS -->
+  <script>
+    document.getElementById("menu-toggle").onclick = function(){
+      document.getElementById("site-nav").classList.toggle("active");
+    };
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
